@@ -1,34 +1,34 @@
 import React from 'react';
 
 
-class CheckState extends React.Component {
-   constructor(props) {
-       super(props);
-       this.state = {
-           value: 1
+class Mapstate extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: [
+                {
+                    name: 'manish',
+                    job: 'service manager',
+                    area: 'navi mumbai'
 
-       };
-   }
+                }
+            ]
 
-   onclickHandler = () => {
-       this.setState({value: this.state.value + 1});
-   }
-
-   onHandler = () => {
-    this.setState({value: this.state.value - 1});
-}
-
+        };
+    }
 
     render() {
         return (
-   <div>  
-       <p>{this.state.value}</p>
-       <button onClick = {this.onclickHandler}> +</button>
-       <button onClick = {this.onHandler}> -</button>
-   </div>
+            <div>
+                {this.state.data.map((num, index) => (
+                    <h4>My self {num.name} i am {num.job} i am from {num.area}  </h4>
+
+                )
+                )}
+            </div>
         );
     }
 }
 
 
-export default CheckState;
+export default Mapstate;
