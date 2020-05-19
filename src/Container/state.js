@@ -5,26 +5,22 @@ class Mapstate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [
-                {
-                    name: 'manish',
-                    job: 'service manager',
-                    area: 'navi mumbai'
-
-                }
-            ]
-
+            data: [1, 2, 3, 4, 5, 6, 7]
         };
+        // console.log(this.state.data.length);
+    }
+
+    addHandler = () => {
+        let max = this.state.data.length - 1;
+        this.state.data.push(this.state.data[max] + 1);
+        this.setState({ data: this.state.data });
     }
 
     render() {
         return (
             <div>
-                {this.state.data.map((num, index) => (
-                    <h4>My self {num.name} i am {num.job} i am from {num.area}  </h4>
-
-                )
-                )}
+                <p> Array length is {this.state.data.length}</p>
+                <button onClick={this.addHandler}>+</button>
             </div>
         );
     }
