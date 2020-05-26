@@ -1,17 +1,28 @@
 import React from 'react';
 import './App.css';
-import CheckState from './Container/state'
-import Hello from './Container/hello-world';
+
+import store from './Homecomp/store';
+import { Provider } from 'react-redux';
+import Display from './Homecomp/displayvalue'
+import Parent from './Homecomp/parent';
+
 
 
 
 function App() {
   return (
+ <Provider store = {store}> 
+   
     <div className="App">
-      <Hello value  = "hello world"/>
-      <CheckState/>
-     
+      
+      <Display/>
+      <Parent store={store}/>
+    
     </div>
+    </Provider>
+
+    
+    
   );
 }
 
