@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+// Display Hello-World Using Props Function..
 class Hello extends React.Component {
     render() {
         return (
@@ -15,3 +15,4 @@ class Hello extends React.Component {
 
 
 export default Hello;
+

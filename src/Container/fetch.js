@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+// Fetching Data From API..
 class Data extends React.Component {
     constructor(props) {
         super(props);
@@ -16,13 +16,13 @@ class Data extends React.Component {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then((result) => {
-                
+
                 this.setState({
                     isLoader: true,
                     item: result
-              
+
                 });
-            
+
             },
                 (error) => {
                     this.setState({
@@ -43,13 +43,32 @@ class Data extends React.Component {
             return <div>Loading ..</div>;
         } else {
             return (
-                <ol>
-                    {item.map(num => (
-                        <li>
-                       Id {num.id} firstName {num.name} userName {num.username}
-                        </li>
-                    ))}
-                </ol>
+                <div className="containe">
+                    <div className="col-md-8">
+                        
+                        <table className=" table table-dark">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>UserName</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {item.map(num => (
+                                    <tr>
+                                        <td>{num.id}</td>
+                                        <td>{num.name}</td>
+                                        <td>{num.username}</td>
+                                    </tr>
+
+                                ))}
+                            </tbody>
+                        </table>
+                        <p>fetch data from API..</p>
+                    </div>
+                </div>
+
             );
         }
 

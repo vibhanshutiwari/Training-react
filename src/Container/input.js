@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+// Display value in input box..
 class CheckInput extends React.Component {
     constructor(props) {
         super(props);

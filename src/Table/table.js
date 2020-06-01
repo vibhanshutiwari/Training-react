@@ -6,7 +6,7 @@ class Displaytable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name:'name',
+            name: 'name',
             data: [
                 {
                     name: 'kapil',
@@ -54,7 +54,7 @@ class Displaytable extends React.Component {
         });
     }
 
-  // Ascending true.. 
+    // Ascending true.. 
     sortHandler = () => {
         let sortField = this.state.name;
         this.setState({ data: this.sortData(true, sortField) });
@@ -96,16 +96,16 @@ class Displaytable extends React.Component {
 
             <div className="container mt-2">
                 <span>Sort By: </span>
-                <select onChange= {this.inputHandler} className="ml-2 ">
+                <select onChange={this.inputHandler} className="ml-2 ">
                     <option value="name">name</option>
                     <option value="phone">phone</option>
                     <option value="email">email</option>
                     <option value="age">age</option>
                     <option value="city">city</option>
                 </select>
-                
-                <button onClick={this.sortHandler}  className="btn btn-info ml-3">asc</button> &nbsp;
-                <button onClick={this.setHandler}   className="btn btn-info">desc</button>
+
+                <button onClick={this.sortHandler} className="btn btn-info ml-3">asc</button> &nbsp;
+                <button onClick={this.setHandler} className="btn btn-info">desc</button>
 
                 <table className="table table-dark mt-3">
                     <thead>
